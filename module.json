@@ -1,0 +1,40 @@
+{
+    "name": "PluginManage",
+    "alias": "pluginmanage",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PluginManage\\Providers\\PluginManageServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "nazmartMetaData": {
+        "admin_settings": {
+            "show_admin_landlord": true,
+            "show_admin_tenant": false,
+            "menu_item": [
+                {
+                    "id" : "plugin-manage-settings-menu",
+                    "label": "Plugins Manage",
+                    "route": "sitepaymentgateway.landlord.admin.settings",
+                    "parent": null,
+                    "icon": "mdi mdi-settings"
+                },
+                {
+                    "id" : "plugin-manage-settings-all-menu",
+                    "label": "All Plugins",
+                    "route": "sitepaymentgateway.landlord.admin.settings",
+                    "parent": "plugin-manage-settings-menu"
+                },
+                {
+                    "id" : "plugin-manage-settings-add-new-menu",
+                    "label": "Add New Plugins",
+                    "route": "sitepaymentgateway.landlord.admin.settings",
+                    "parent": "plugin-manage-settings-menu"
+                }
+            ]
+        }
+    }
+}
