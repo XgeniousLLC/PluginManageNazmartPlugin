@@ -1,7 +1,8 @@
 {
     "name": "PluginManage",
     "alias": "pluginmanage",
-    "description": "",
+    "version" : "1.0.0",
+    "description": "This plugin build to manage all the plugin of this script",
     "keywords": [],
     "priority": 0,
     "providers": [
@@ -18,20 +19,20 @@
                 {
                     "id" : "plugin-manage-settings-menu",
                     "label": "Plugins Manage",
-                    "route": "sitepaymentgateway.landlord.admin.settings",
+                    "route": "landlord.plugin.manage.new",
                     "parent": null,
                     "icon": "mdi mdi-settings"
                 },
                 {
                     "id" : "plugin-manage-settings-all-menu",
                     "label": "All Plugins",
-                    "route": "sitepaymentgateway.landlord.admin.settings",
+                    "route": "landlord.plugin.manage.all",
                     "parent": "plugin-manage-settings-menu"
                 },
                 {
                     "id" : "plugin-manage-settings-add-new-menu",
                     "label": "Add New Plugins",
-                    "route": "sitepaymentgateway.landlord.admin.settings",
+                    "route": "landlord.plugin.manage.new",
                     "parent": "plugin-manage-settings-menu"
                 }
             ]
