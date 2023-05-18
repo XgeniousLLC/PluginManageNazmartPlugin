@@ -5,7 +5,8 @@ namespace Modules\PluginManage\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Http\File;
+use Illuminate\Http\File as HttpFile;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Modules\PluginManage\Http\Helpers\PluginManageHelpers;
 
@@ -43,8 +44,6 @@ class PluginManageController extends Controller
         $request->validate([
             "plugin_file" => "required|file|mimes:zip|max:200000"
         ]);
-
-        Storage::move('app/plugins-file/SiteWayPaymentGateway',"Modules/");
 
         //todo work for upload plugin
         //todo validate the plugin file is valid or not.. it has contain nazmart meta data or not
@@ -94,13 +93,13 @@ class PluginManageController extends Controller
                 if (str_contains($folderName, '.vscode') || str_contains($folderName, '.idea') || str_contains($folderName, '.fleet') || str_contains($folderName, '.git')){
                     continue;
                 }
-                $file = new File(storage_path("app/" . $updateFile));
+                $file = new HttpFile(storage_path("app/" . $updateFile));
                 $skipFiles = ['.DS_Store','.gitkeep'];
                 if (!in_array($fileName,$skipFiles)){
-                    dd($folderName);
-                    $file->move(storage_path('../Modules/' . $folderName));
+                    $file->move(storage_path('../Modules/' . str_replace("plugins-file/","",$folderName)));
                 }
             }
+
         }
 
         Storage::deleteDirectory($updatedFileLocation);

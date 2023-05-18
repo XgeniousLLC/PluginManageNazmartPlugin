@@ -142,10 +142,6 @@
                         <p>{{__("manage all plugins from here, you can active/deactivate plugin or can delete any plugin from here...")}}</p>
                     </div>
                     <div class="plugin-grid">
-<<<<<<< HEAD
-=======
-
->>>>>>> c4e560a0aee8ce866e7909a15da5cc7b608c4420
                     @foreach($pluginList as $plugin)
                             <div class="plugin-card">
                                 <div class="thumb-bg-color {{\Illuminate\Support\Str::slug($plugin->category,null,"_")}}">
@@ -216,7 +212,7 @@
                                 status : allData.status,
                             },
                             success: function (data){
-
+                                location.reload();
                             }
                         })
                     }
@@ -264,7 +260,7 @@
                                 plugin : allData.plugin,
                             },
                             success: function (data){
-
+                                location.reload();
                             }
                         })
                     }

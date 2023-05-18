@@ -31,7 +31,7 @@
                 },
                 {
                     "id" : "plugin-manage-settings-add-new-menu",
-                    "label": "Add New Plugins",
+                    "label": "Add New Plugin",
                     "route": "landlord.plugin.manage.new",
                     "parent": "plugin-manage-settings-menu"
                 }

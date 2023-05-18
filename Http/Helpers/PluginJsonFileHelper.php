@@ -104,10 +104,10 @@ class PluginJsonFileHelper
     public function changePluginStatus($status){
         Cache::forget("allModuleStatus");
         $pluginName = $this->pluginDirName;
-        $moduleList = $this->moduleList;
-        if (property_exists($moduleList,$pluginName)){
+//        $moduleList = $this->moduleList;
+//        if (property_exists($moduleList,$pluginName)){
             $this->moduleList->$pluginName = $status;
-        }
+//        }
         return $this;
     }
     public function removePlugin(){
