@@ -181,12 +181,14 @@
                 var el = $(this);
                 let allData = el.data();
                 //todo check warning based on plugin type
-                console.log(allData.status)
                 var swalDesc =  '{{__("it will disabled the features you are enjoying from")}} ' +allData.plugin + " {{__("plugin!")}}";
                 var swalBtnText = allData.status == 1 ? "{{__('Yes, deactivate it!')}}" : "{{__('Yes, active it!')}}";
                 var buttonText = allData.status !== 1 ? "{{__('Deactivate')}}" : "{{__('Active')}}";
                 if(allData.plugintype === "Core Plugin" ){
                     swalDesc = allData.plugin+" {{__('is a core plugin, after deactivate it you might face issues or error in the website')}}";
+                }
+                if(allData.status == 0){
+                    swalDesc = "{{__("you are activating a new plugin..")}}"
                 }
                 Swal.fire({
                     title: '{{__("Are you sure to deactivate")}} '+allData.plugin+" {{__("plugin ?")}}",
