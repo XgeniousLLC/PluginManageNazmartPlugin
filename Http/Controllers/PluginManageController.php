@@ -118,6 +118,7 @@ class PluginManageController extends Controller
         File::deleteDirectory(module_path(implode("",explode(" ",$request->plugin))));
         return response()->json("ok");
     }
+
     public function change_status(Request $request)
     {
         $request->validate([
